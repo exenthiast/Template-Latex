@@ -1,0 +1,144 @@
+\documentclass[a4paper,oneside,11pt]{book}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\title{Laporan Praktikum \\ Praktikum Basis Data\\
+Pertemuan 2\\
+Data Definition Language}
+\author{Nama Mahasiswa: Alfiz Desta Ariant Permana(24/543220/SV/25173)}
+\date{\today}
+
+\geometry{
+    left=3cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=3cm
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{sqlstyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codepurple},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codegreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single
+}
+
+\lstdefinestyle{htmlstyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codepurple},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codegreen},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single
+}
+
+
+
+\begin{document}
+\begin{titlingpage} %This starts the title page
+\begin{center}
+
+\vspace{4cm} %You can control the vertical distance
+\begin{huge} 
+\textbf{\thetitle} \\
+\end{huge}
+\vspace{2cm}
+
+\includegraphics[height=8cm]{lambang ugm.png}\\ %Put the logo you want here
+\begin{Large}
+\vspace{4cm} %Put the distance you need.
+\theauthor\\
+Kelas A2 \\ %The name your university
+\end{Large}
+\begin{large}
+Dosen Pengampu: Dinar Nugroho Pratomo, S.Kom., M.IM., M.Cs.\\
+\end{large}
+
+
+\thedate
+\end{center}
+\end{titlingpage}
+
+
+\tableofcontents
+
+\chapter{Tujuan Praktikum} 
+\begin{enumerate}
+  \item 
+\end{enumerate}
+
+\chapter{Dasar Teori}
+
+
+\chapter{Hasil dan Pembahasan}
+\begin{lstlisting}[language=SQL, style=sqlstyle]
+    CREATE TABLE pembelian (
+      kode_pembelian char(6) NOT NULL PRIMARY KEY,
+      kode_barang char(6) NOT NULL,
+      kode_customer char(6) NOT NULL,
+      jumlah_pasok INT,
+      
+      FOREIGN KEY (kode_barang) REFERENCES barang(kode_barang),
+      FOREIGN KEY (kode_customer) REFERENCES customer(kode_customer)
+     );
+    \end{lstlisting}
+
+\begin{lstlisting}[language=HTML, style=htmlstyle]
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Judul Halaman</title>
+    </head>
+    <body>
+        <h1>Ini adalah heading</h1>
+        <p>Ini adalah paragraf.</p>
+    </body>
+    </html>
+\end{lstlisting}
+
+
+\chapter{Kesimpulan}
+
+\chapter{Daftar Pustaka}
+\begin{enumerate}
+    \item itboxddl, \url{https://itbox.id/blog/ddl-adalah/}
+    \item datacampCommandsDefinitive, \url{https://www.datacamp.com/tutorial/sql-ddl-commands}
+    \item telkomuniversitySimakPengertian, \url{https://it.telkomuniversity.ac.id/perintah-dasal-sql/}
+\end{enumerate}
+
+
+
+\end{document}
